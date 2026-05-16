@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JCF Specialized Operations</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0a1628;
+      background-image: linear-gradient(135deg, #0a1628 0%, #1a2f55 50%, #0d1f3c 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+
+    .landing-wrapper {
+      width: 100%;
+      max-width: 520px;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .logo-section {
+      margin-bottom: 40px;
+    }
+
+    .logo-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #1e90ff, #00c6ff);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px auto;
+      font-size: 36px;
+      font-weight: 900;
+      color: #fff;
+      box-shadow: 0 8px 32px rgba(30, 144, 255, 0.4);
+    }
+
+    .org-title {
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #ffffff;
+      line-height: 1.2;
+    }
+
+    .org-subtitle {
+      font-size: 0.85rem;
+      color: #8fa8d0;
+      margin-top: 6px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      color: #5a7aaa;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .coy-card {
+      display: block;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 14px;
+      padding: 22px 28px;
+      margin-bottom: 16px;
+      text-decoration: none;
+      color: #fff;
+      transition: all 0.25s ease;
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .coy-card::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      border-radius: 4px 0 0 4px;
+    }
+
+    .coy-card.alpha::before { background: linear-gradient(180deg, #1e90ff, #00c6ff); }
+    .coy-card.bravo::before { background: linear-gradient(180deg, #28a745, #20c997); }
+    .coy-card.charlie::before { background: linear-gradient(180deg, #fd7e14, #ffc107); }
+
+    .coy-card:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.25);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .coy-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .coy-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      font-weight: 800;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+      margin-right: 14px;
+      flex-shrink: 0;
+    }
+
+    .coy-card.alpha .coy-badge { background: rgba(30, 144, 255, 0.2); color: #4db8ff; }
+    .coy-card.bravo .coy-badge { background: rgba(40, 167, 69, 0.2); color: #5dd68a; }
+    .coy-card.charlie .coy-badge { background: rgba(253, 126, 20, 0.2); color: #ffaa55; }
+
+    .coy-info {
+      flex: 1;
+    }
+
+    .coy-name {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .coy-desc {
+      font-size: 0.78rem;
+      color: #8fa8d0;
+      font-weight: 400;
+    }
+
+    .coy-arrow {
+      font-size: 1.2rem;
+      color: #5a7aaa;
+      transition: transform 0.2s ease;
+    }
+
+    .coy-card:hover .coy-arrow {
+      transform: translateX(4px);
+      color: #8fa8d0;
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 0.72rem;
+      color: #3d5070;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="landing-wrapper">
+    <div class="logo-section">
+      <div class="logo-icon">JCF</div>
+      <div class="org-title">JCF Specialized Operations</div>
+      <div class="org-subtitle">Company Portals</div>
+    </div>
+
+    <div class="section-label">Select Your Company</div>
+
+    <a href="https://web.jcf-specializedops.com/acoy" class="coy-card alpha">
+      <div class="coy-header">
+        <div class="coy-badge">A</div>
+        <div class="coy-info">
+          <div class="coy-name">Alpha Company</div>
+          <div class="coy-desc">ACOY Portal &mdash; web.jcf-specializedops.com/acoy</div>
+        </div>
+        <div class="coy-arrow">&#8250;</div>
+      </div>
+    </a>
+
+    <a href="https://web.jcf-specializedops.com/bcoy" class="coy-card bravo">
+      <div class="coy-header">
+        <div class="coy-badge">B</div>
+        <div class="coy-info">
+          <div class="coy-name">Bravo Company</div>
+          <div class="coy-desc">BCOY Portal &mdash; web.jcf-specializedops.com/bcoy</div>
+        </div>
+        <div class="coy-arrow">&#8250;</div>
+      </div>
+    </a>
+
+    <a href="https://web.jcf-specializedops.com/ccoy" class="coy-card charlie">
+      <div class="coy-header">
+        <div class="coy-badge">C</div>
+        <div class="coy-info">
+          <div class="coy-name">Charlie Company</div>
+          <div class="coy-desc">CCOY Portal &mdash; web.jcf-specializedops.com/ccoy</div>
+        </div>
+        <div class="coy-arrow">&#8250;</div>
+      </div>
+    </a>
+
+    <div class="footer">JCF Specialized Operations &copy; 2026</div>
+  </div>
+
+</body>
+</html>
